@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a few preamble commands to set up and import all LHCb symbols
+% it requires the file 'lhcb-symbols-def.tex' which should be in the 
+% directory with the talk.
+% 
+% Sam Cunliffe May 2012
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% some packages needed for 
+% lhcb symbols definitions
+\usepackage{xspace}  % sorts out spacing in and out of math mode
+\usepackage{ifthen}  % allows boolean vars to control decisions
+
+% choose how particles are displayed
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %true == roman particle symbols
+
+% import all lhcb symbols
+\input{preamble/lhcb-symbols-def}
+
+% sort out the naff notation for BR
+\newcommand{\br}[1]{\ensuremath{\mathcal{BR}\left[#1\right]} }
+\renewcommand{\BR}{\ensuremath{\mathcal{BR}} }
+
+% a few other general HEP math symbols
+\newcommand{\sgma}{\ensuremath{\sigma}\xspace}
+\newcommand{\Ai}{\ensuremath{A_{I}}\xspace}
+
+% muons, dimuons
+\newcommand{\muon}{\ensuremath{\mu}\xspace}
+\newcommand{\mmumu}{\ensuremath{m_{\mu\mu}}\xspace}
+\newcommand{\dimu}{\ensuremath{\mu\mu}\xspace}
+
+% undefined particles that I might want
+\renewcommand{\Bd}{\ensuremath{\B^0}\xspace}
+\newcommand{\rhoz}{\ensuremath{\rho^0}\xspace}
+\newcommand{\rhop}{\ensuremath{\rho^{+}}\xspace}
+
+% Bs -> Mu Mu Gamma
+\newcommand{\BdstoMuMuG}{\ensuremath{\B^0_{d,s}\to\mup\mun\g} }
+\newcommand{\BstoMuMuG} {\ensuremath{\Bs\to\mup\mun\g} }
+\newcommand{\BdtoMuMuG} {\ensuremath{\Bd\to\mup\mun\g} }
+\newcommand{\BdstoMuMu} {\ensuremath{\B^0_{d,s}\to\mup\mun}\xspace}
+\newcommand{\BstoMuMu}  {\ensuremath{\Bs\to\mup\mun}\xspace}
+\newcommand{\BdtoMuMu}  {\ensuremath{\Bd\to\mup\mun}\xspace}
+\newcommand{\Bdstollg}  {\ensuremath{\B^{0}_{d,s}\to\ellell\g} }
+
+% Bd -> Pi0 Mu Mu
+\newcommand{\mpimumu}      {\ensuremath{m_{\pi\mu\mu}}\xspace}
+\newcommand{\thbdy}        {\ensuremath{\pi\mu\mu}\xspace}
+\newcommand{\BdtoPizMuMu}  {\ensuremath{\Bd\to\piz\mumu}\xspace}
+\newcommand{\BztoPizMuMu}  {\ensuremath{\Bd\to\piz\mumu}\xspace}
+\newcommand{\BdtoPizJpsi}  {\ensuremath{\Bd\to\piz\jpsi}\xspace}
+\newcommand{\BdtoPizJpsimm}{\ensuremath{\Bd\to\piz\jpsi(\mumu)}\xspace}
+\newcommand{\BptoPipMuMu}  {\ensuremath{\Bp\to\pip\mumu}\xspace}
+

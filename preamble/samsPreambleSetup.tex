@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a butt-load of preamble commands to setup beamer how I like it.
+% It modifies a fair amount of stuff but hopefully I've labelled 
+% everything neatly and explicitly.
+% 
+% Sam Cunliffe May 2012
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% use minimalist beamer template as a starting point
+\usebeamertemplate{default}
+
+%%%%%%%%%%%%%%%%%%
+%%% colouring  %%%
+%%%%%%%%%%%%%%%%%%
+
+% sam's favourite blues
+\definecolor{bleufonce}{RGB}{65,105,225}
+\definecolor{vertfonce}{RGB}{96,189,99}
+\definecolor{bleu}{RGB}{209,232,255}
+
+% set colors
+\setbeamercolor{title}{fg=black}      
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{background canvas}{bg=white}%=milkyblue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% font formatting  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% a font package which has a nicer serif font
+% than usual  helvet
+\usepackage{charter}
+
+% makes bulleted lists appear slightly 
+% transparent before uncovering the bullet
+\beamertemplatetransparentcovereddynamicmedium
+
+% puts titles in bold
+\usefonttheme{structurebold}  
+
+% makes font serif
+\usefonttheme{serif} 
+\usepackage{wrapfig} 
+
+% include and configure hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    %unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    %pdfstartview={FitH},    % fits the width of the page to the window
+    %pdftitle={My title},    % title
+    %pdfauthor={Author},     % author
+    %pdfsubject={Subject},   % subject of the document
+    %pdfcreator={Creator},   % creator of the document
+    %pdfproducer={Producer}, % producer of the document
+    %pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    %pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,        % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+
+% allow for upright greek
+\usepackage{upgreek}
+
+% split long lists etc into two columns
+\usepackage{multicol}
+
+% les diagrams feynman
+%\usepackage{axodraw}
+
+%%%%%%%%%%%%%%%%%%%
+%% table spacing %%
+%%%%%%%%%%%%%%%%%%%
+%\newcommand\Top{\rule{0pt}{2.6ex}}
+%\newcommand\Bot{\rule[-1.2ex]{0pt}{0pt}}
+\renewcommand{\arraystretch}{1.5}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% math and symbol formatting  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+
+
+%% Backup with minus numbering! As an appendix.
+\newcommand{\beginbackup}{
+   \newcounter{framenumbervorappendix}
+   \setcounter{framenumbervorappendix}{\value{framenumber}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% slide numbering footer formatting  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% turns off useless semitransparent buttons
+% on the bottom left hand side of all slides
+% seriously, they contribute ABSOLUTELY NOTHING
+\setbeamertemplate{navigation symbols}{}
+
+% edits the template's footer
+\setbeamertemplate
+{footline}              %
+{                       %
+\color{gray}            % makes the text in the footer grey
+\hspace*{1em}           % moves stuff 1em from the LHS of the page
+%\,/\,                   %  linux directory type structure
+%\insertsubsection       %
+%\hfill                  % horizontal filling space
+\insertshortauthor      % inserts author arguement in []'s
+\,(\insertshortinstitute)
+\hspace*{1em}           % a 1em space between author and page number
+\insertshortdate
+\hfill
+\insertsection          % prints section name if any
+\hfill
+\insertframenumber/\inserttotalframenumber      % page number
+\hspace*{1em}           % moves stuff 1em from the RHS of the page
+% \vskip0.05cm          % moves stuff 10pts up from the bottom
+\vspace*{1em}           %
+} 

@@ -1,0 +1,62 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% include preamble commands %%%
+%%%                           %%%
+%%% -makes beamer simplified  %%%
+%%% -include particle symbols %%%
+%%% -custom decay commands    %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{preamble/samsPreambleSetup}
+\input{preamble/samsLHCbSetup}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% title fields  %%%
+%%%%%%%%%%%%%%%%%%%%%
+
+% will ned to change these
+\title{Talk}
+\author[S.Cunliffe]{
+    Collaborator Name
+    \underline{Sam Cunliffe}
+}
+\institute[Imperial]{Imperial College London}
+\date{What Meeting. \hfill Date.}
+
+%%%%%%%%%%%%%%%%%%%%
+%%% talk slides  %%%
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+    \input{frontmatter/samsTitleFrame}
+
+    \begin{frame}[containsverbatim]\frametitle{Introduction}
+      \begin{itemize}
+        \item First item
+        \item Second item
+        \item \verb?Some.code()?
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}\frametitle{Figure}
+      \includegraphics[height=5cm]{figs/penguin.jpg}
+    \end{frame}
+
+    \begin{frame}\frametitle{Table}
+      \begin{itemize}
+        \item How to include tables
+      \end{itemize}
+      \begin{tabular}{|c|c|c|}
+        \hline
+        a & b & c \\
+        \hline
+        aa & bb & cc \\
+        aaa & bbb & ccc \\
+        \hline
+      \end{tabular}
+    \end{frame}
+
+\end{document}
