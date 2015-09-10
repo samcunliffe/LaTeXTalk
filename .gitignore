@@ -1,0 +1,9 @@
+*.swp
+talk.pdf # still want to notice other, non-target pdfs
+make.stdout
+
+# other latex debris
+*.log
+*.aux
+*.toc
+*.out
