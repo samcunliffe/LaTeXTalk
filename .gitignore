@@ -7,3 +7,5 @@ make.stdout
 *.aux
 *.toc
 *.out
+*.nav
+*.snm
