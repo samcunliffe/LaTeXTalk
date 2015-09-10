@@ -8,19 +8,25 @@
 %%% -custom decay commands    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{preamble/samsPreambleSetup}
-\input{preamble/samsLHCbSetup}
+\input{pre/samsPreambleSetup} % my stuff
 
+%%%%%%%%% lhcb stuff from the lhcb paper template
+\usepackage{xspace}  % sorts out spacing in and out of math mode
+\usepackage{ifthen}  % allows boolean vars to control decisions
+
+% choose how particles are displayed
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %true == roman particle symbols
+\input{pre/lhcb-symbols-def} % import all lhcb symbols
 
 %%%%%%%%%%%%%%%%%%%%%
 %%% title fields  %%%
 %%%%%%%%%%%%%%%%%%%%%
 
-% will ned to change these
 \title{Talk}
 \author[S.Cunliffe]{
-    Collaborator Name
-    \underline{Sam Cunliffe}
+  Collaborator Name
+  \underline{Sam Cunliffe}
 }
 \institute[Imperial]{Imperial College London}
 \date{What Meeting. \hfill Date.}
@@ -31,14 +37,14 @@
 
 \begin{document}
 
-    \input{frontmatter/samsTitleFrame}
+\input{front/samsTitleFrame}
 
-    \begin{frame}[containsverbatim]\frametitle{Introduction}
-      \begin{itemize}
-        \item First item
-        \item Second item
-        \item \verb?Some.code()?
-      \end{itemize}
+\begin{frame}[containsverbatim]\frametitle{Introduction}
+\begin{itemize}
+  \item First item
+  \item Second item
+  \item \verb?Some.code()?
+\end{itemize}
     \end{frame}
 
     \begin{frame}\frametitle{Figure}
@@ -58,24 +64,24 @@
         \hline
       \end{tabular}
     \end{frame}
-  
+
     % stop page counting for total
     \beginbackup
-  
+
     \begin{frame}[plain]
       \vfill
       \huge{\bf [Backup Slides]}
       \vfill
     \end{frame}
-  
+
     \begin{frame}\frametitle{First slide of backup material}
       \begin{itemize}
         \item First item
         \item Second item
       \end{itemize}
     \end{frame}
-    
+
     % finish backup
     \backupend
 
-\end{document}
+    \end{document}
