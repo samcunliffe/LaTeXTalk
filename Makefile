@@ -28,7 +28,7 @@ all: $(OUTPUT)
 # remove temporary files
 .PHONY : clean
 clean:
-	rm -f *~ *.toc *.snm *.aux *.log *.blg *.dvi *.tmp *.out *.blg *.nav $(MAIN)$(MAINEXT) $(MAIN).ps
+	rm -f *~ *.toc *.snm *.aux *.log *.blg *.dvi *.tmp *.out *.blg *.nav $(MAIN)$(MAINEXT) $(MAIN).ps make.stdout
 
 # remove output file
 rmout: 
